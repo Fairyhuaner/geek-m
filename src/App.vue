@@ -1,6 +1,7 @@
 <template>
   <div>
-    <router-view />
+    <RouterView class="body" />
+    <RouterView class="footer" name="layout" />
   </div>
 </template>
 
@@ -18,5 +19,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+#app {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .body {
+    flex: 1;
+    overflow: hidden;
+  }
+  .footer {
+    height: 50px;
+  }
+}
 </style>
