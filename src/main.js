@@ -6,9 +6,11 @@ import store from './store'
 import Vant from 'vant'
 import 'vant/lib/index.less'
 import 'amfe-flexible'
-import '@/styles/icon.less'
-
+// import '@/styles/icon.less'
+import ToutiaoIcon from '@/components/ToutiaoIcon'
+import '@/styles/index.less'
 Vue.use(Vant)
+Vue.component('ToutiaoIcon', ToutiaoIcon)
 Vue.config.productionTip = false
 
 new Vue({

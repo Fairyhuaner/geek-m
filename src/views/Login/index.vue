@@ -1,9 +1,10 @@
 <template>
   <div class="login-page">
-    <div class="back">
-      <van-icon name="arrow-left" />
+    <div class="back" >
+      <van-icon name="arrow-left" @click="$router.push('/user')"/>
     </div>
-    <van-nav-bar title="头条登录" class="title"> </van-nav-bar>
+    <van-nav-bar title="头条登录" class="title" >
+    </van-nav-bar>
     <!-- 表单 -->
     <van-form @submit="onSubmit" ref="form">
       <van-field
@@ -18,7 +19,7 @@
           },
         ]"
       >
-        <i class="toutiao toutiao-shouji" slot="left-icon"></i>
+        <ToutiaoIcon name="shouji" slot="left-icon"></ToutiaoIcon>
       </van-field>
       <van-field
         v-model.trim="code"
@@ -92,9 +93,10 @@ export default {
     async onSubmit (values) {
       try {
         const res = await login(values)
-        console.log(values)
-        // console.log(res)
+        // console.log(values)
+        console.log(res)
         this.$store.commit('setUser', res.data.data)
+        this.$router.push({ name: 'user' })
       } catch (err) {
         console.log(err)
       }

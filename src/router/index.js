@@ -33,6 +33,7 @@ const routes = [
   },
   {
     path: '/user',
+    name: 'user',
     components: {
       default: User,
       layout: Layout
