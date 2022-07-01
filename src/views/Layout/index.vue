@@ -1,6 +1,9 @@
 <template>
   <div class="app-layout">
-    <router-view />
+    <!-- 点击之后带有缓存 -->
+    <keep-alive :include="['Home']">
+      <router-view />
+    </keep-alive>
 
     <van-tabbar route>
       <van-tabbar-item replace to="/" icon="home-o">

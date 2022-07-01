@@ -7,6 +7,7 @@ const Question = () => import('@/views/Question')
 const User = () => import('@/views/User')
 const Article = () => import('@/views/Article')
 const Login = () => import('@/views/Login')
+const Search = () => import('@/views/Search')
 Vue.use(VueRouter)
 
 const routes = [
@@ -46,6 +47,10 @@ const routes = [
   {
     path: '/login',
     component: Login
+  },
+  {
+    path: '/search',
+    component: Search
   }
 ]
 
