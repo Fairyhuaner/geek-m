@@ -8,13 +8,28 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user: {}
+    user: {},
+    searchHistoryList: []
   },
   getters: {
   },
   mutations: {
     setUser (state, payload) {
       state.user = payload
+    },
+    setSearchHistoryList (state, payload) {
+      let arr = state.searchHistoryList
+      arr.unshift(payload)
+      arr = [...new Set(arr)]
+      state.searchHistoryList = arr
+    },
+    // 根据索引删除历史记录的一个
+    delHistories (state, index) {
+      state.searchHistoryList.splice(index, 1)
+    },
+    // 删除所有历史记录
+    delAllHistories (state) {
+      state.searchHistoryList = []
     }
   },
   actions: {
