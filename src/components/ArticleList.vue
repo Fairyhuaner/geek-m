@@ -52,9 +52,9 @@ export default {
     return {
       timestamp: Date.now(),
       articleList: [],
-      loading: false,
+      loading: false, // 下面底部刷新
       finished: false,
-      isLoading: false
+      isLoading: false // 上面顶部刷新
     }
   },
   methods: {
@@ -76,7 +76,10 @@ export default {
         }
         this.articleList.push(...res.data.data.results)
         // 数据更新完毕
+        // 底部刷新关闭
         this.loading = false
+        // 顶部刷新关闭
+        this.isLoading = false
       } catch (err) {
         console.log(err)
       }
@@ -85,9 +88,10 @@ export default {
       this.getArticleList()
     },
     onRefresh () {
-      console.log('下拉刷新触发了')
+      // console.log('下拉刷新触发了')
+      this.articleList = []
       this.finished = false // 防止用户把加载更多搞结束了
-      this.loading = true
+      this.isLoading = true
       this.timestamp = Date.now()
       this.getArticleList()
     }

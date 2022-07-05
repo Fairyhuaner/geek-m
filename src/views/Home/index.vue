@@ -16,7 +16,9 @@
         v-for="(item, index) in channels"
         :key="index"
       >
-        <ArticleList :id="item.id"></ArticleList>
+        <!-- 文章列表 -->
+        <ArticleList :id="item.id" class="article-list"></ArticleList>
+        <!-- /文章列表 -->
       </van-tab>
       <template #nav-right>
         <div class="menu" @click="isChannelPanelShow = true">
@@ -137,8 +139,11 @@ export default {
 .channel-panel {
   margin-top: 1rem;
 }
+.article-list {
+  margin-top: 180px;
+}
 /deep/ .van-pull-refresh {
-  height: calc(120vh - 274px);
+  height: calc(100vh - 274px);
   overflow: auto;
 }
 </style>

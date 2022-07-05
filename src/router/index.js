@@ -41,8 +41,11 @@ const routes = [
     }
   },
   {
-    path: '/article',
-    component: Article
+    path: '/article/:article_id',
+    component: Article,
+    name: 'article',
+    // params相关的路由加props:true 可以让路由和组件解耦
+    props: true
   },
   {
     path: '/login',

@@ -11,6 +11,9 @@ import ToutiaoIcon from '@/components/ToutiaoIcon'
 import '@/styles/index.less'
 // 一次性把所有按需导出给导出来
 import * as obj from '@/filters'
+import FollowUser from '@/components/FollowUser.vue'
+import '@/components'
+Vue.component(FollowUser.name, FollowUser)
 Vue.use(Vant)
 Vue.component('ToutiaoIcon', ToutiaoIcon)
 Object.keys(obj).forEach(key => {

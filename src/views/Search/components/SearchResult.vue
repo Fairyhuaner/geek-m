@@ -59,7 +59,7 @@ export default {
           this.finished = true
           return
         }
-        this.list = res.data.data.results
+        this.list.push(...res.data.data.results)
         // 下拉刷新
         this.loading = false
         // 上拉刷新
